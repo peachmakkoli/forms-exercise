@@ -10,39 +10,11 @@ const SignupForm = (props) => {
     password: '',
   });
 
-  const onFirstNameChange = (event) => {
+  const onInputChange = (event) => {
     const newUser = {
       ...user,
-      firstName: event.target.value,
     };
-
-    setUser(newUser);
-  };
-
-  const onLastNameChange = (event) => {
-    const newUser = {
-      ...user,
-      lastName: event.target.value,
-    };
-
-    setUser(newUser);
-  };
-
-  const onEmailChange = (event) => {
-    const newUser = {
-      ...user,
-      email: event.target.value,
-    };
-
-    setUser(newUser);
-  };
-
-  const onPasswordChange = (event) => {
-    const newUser = {
-      ...user,
-      password: event.target.value,
-    };
-
+    newUser[event.target.name] = event.target.value;
     setUser(newUser);
   };
 
@@ -70,7 +42,7 @@ const SignupForm = (props) => {
             name="firstName" 
             placeholder="First Name"
             value={user.firstName}
-            onChange={onFirstNameChange}
+            onChange={onInputChange}
           />
         </div>
         <div className="right-half">
@@ -79,7 +51,7 @@ const SignupForm = (props) => {
             name="lastName" 
             placeholder="Last Name"
             value={user.lastName}
-            onChange={onLastNameChange}
+            onChange={onInputChange}
           />
         </div>
       </div>
@@ -90,7 +62,7 @@ const SignupForm = (props) => {
           type="email" 
           placeholder="Email"
           value={user.email}
-          onChange={onEmailChange}
+          onChange={onInputChange}
         />
       </div>
       <div className="full-width">
@@ -100,7 +72,7 @@ const SignupForm = (props) => {
           type="password" 
           placeholder="Password"
           value={user.password}
-          onChange={onPasswordChange}
+          onChange={onInputChange}
         />
       </div>
       <input
