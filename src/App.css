@@ -1,4 +1,13 @@
+body {
+  background-color: #3b4b54;
+}
+
+h1 {
+  font-size: 1.5em;
+}
+
 .App {
+  background-color: #3b4b54;
   text-align: center;
 }
 
@@ -14,8 +23,19 @@
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  background-color: #3b4b54;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  margin-bottom: 5em;
+}
+
+.App-main {
+  background-color: #3b4b54;
   display: flex;
   flex-direction: column;
   align-items: center;

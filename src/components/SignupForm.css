@@ -10,12 +10,14 @@ form div {
 }
 
 input {
+  border: none;
   margin: 10px 0;
   padding-left: 10px;
 }
 
 input:focus {
-  box-shadow: inset 3px 0 #40a46e;
+  outline-style: none;
+  box-shadow: inset 5px 0 #40a46e;
 };
 
 .left-half input {
@@ -27,7 +29,7 @@ input:focus {
 }
 
 .full-width input {
-  width: 485px;
+  width: 489px;
 }
 
 input[type=submit] {
