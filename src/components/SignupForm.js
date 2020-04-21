@@ -3,23 +3,50 @@ import './SignupForm.css';
 
 const SignupForm = (props) => {
 
+  const [user, setUser] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    password: '',
+  });
+
   return (
     <form className="signup-form">
-      <div>
-        <label htmlFor="firstName">First Name</label>
-        <input name="firstName" />
+      <div className="half-width">
+        <div className="left-half">
+          <label htmlFor="firstName">First Name</label>
+          <input 
+            name="firstName" 
+            placeholder="First Name"
+            value={user.firstName}
+          />
+        </div>
+        <div className="right-half">
+          <label htmlFor="lastName">Last Name</label>
+          <input 
+            name="lastName" 
+            placeholder="Last Name"
+            value={user.lastName}
+          />
+        </div>
       </div>
-      <div>
-        <label htmlFor="lastName">Last Name</label>
-        <input name="lastName" />
-      </div>
-      <div>
+      <div className="full-width">
         <label htmlFor="email">Email</label>
-        <input name="email" />
+        <input 
+          name="email" 
+          type="email" 
+          placeholder="Email"
+          value={user.email} 
+        />
       </div>
-      <div>
+      <div className="full-width">
         <label htmlFor="password">Password</label>
-        <input name="password" type="password" />
+        <input 
+          name="password" 
+          type="password" 
+          placeholder="Password"
+          value={user.password}
+        />
       </div>
       <input
         type="submit"
