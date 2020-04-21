@@ -46,6 +46,21 @@ const SignupForm = (props) => {
     setUser(newUser);
   };
 
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    
+    if (user.firstName !== '' && user.lastName !== '' && user.email !== '' && user.password !== '') {
+      console.log(user);
+
+      setUser({
+        firstName: '',
+        lastName: '',
+        email: '',
+        password: '',
+      });
+    };
+  };
+
   return (
     <form className="signup-form">
       <div className="half-width">
