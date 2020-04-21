@@ -10,6 +10,42 @@ const SignupForm = (props) => {
     password: '',
   });
 
+  const onFirstNameChange = (event) => {
+    const newUser = {
+      ...user,
+      firstName: event.target.value,
+    };
+
+    setUser(newUser);
+  };
+
+  const onLastNameChange = (event) => {
+    const newUser = {
+      ...user,
+      lastName: event.target.value,
+    };
+
+    setUser(newUser);
+  };
+
+  const onEmailChange = (event) => {
+    const newUser = {
+      ...user,
+      email: event.target.value,
+    };
+
+    setUser(newUser);
+  };
+
+  const onPasswordChange = (event) => {
+    const newUser = {
+      ...user,
+      password: event.target.value,
+    };
+
+    setUser(newUser);
+  };
+
   return (
     <form className="signup-form">
       <div className="half-width">
@@ -19,6 +55,7 @@ const SignupForm = (props) => {
             name="firstName" 
             placeholder="First Name"
             value={user.firstName}
+            onChange={onFirstNameChange}
           />
         </div>
         <div className="right-half">
@@ -27,6 +64,7 @@ const SignupForm = (props) => {
             name="lastName" 
             placeholder="Last Name"
             value={user.lastName}
+            onChange={onLastNameChange}
           />
         </div>
       </div>
@@ -36,7 +74,8 @@ const SignupForm = (props) => {
           name="email" 
           type="email" 
           placeholder="Email"
-          value={user.email} 
+          value={user.email}
+          onChange={onEmailChange}
         />
       </div>
       <div className="full-width">
@@ -46,11 +85,13 @@ const SignupForm = (props) => {
           type="password" 
           placeholder="Password"
           value={user.password}
+          onChange={onPasswordChange}
         />
       </div>
       <input
         type="submit"
         value="Create Account"
+        onClick={onFormSubmit}
       />
     </form>
   );
