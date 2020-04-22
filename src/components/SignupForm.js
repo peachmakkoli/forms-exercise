@@ -11,10 +11,13 @@ const SignupForm = (props) => {
   });
 
   const onInputChange = (event) => {
+    const { name, value } = event.target
+    
     const newUser = {
       ...user,
+      [name]: value,
     };
-    newUser[event.target.name] = event.target.value;
+
     setUser(newUser);
   };
 
