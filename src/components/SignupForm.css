@@ -44,3 +44,7 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #49ba7d;
 }
+
+input[type=submit]:focus {
+  box-shadow: none;
+}
