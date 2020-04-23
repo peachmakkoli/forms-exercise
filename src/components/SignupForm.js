@@ -37,7 +37,7 @@ const SignupForm = (props) => {
   };
 
   return (
-    <form className="signup-form">
+    <form className="signup-form" onSubmit={onFormSubmit}>
       <div className="half-width">
         <div className="left-half">
           <label htmlFor="firstName">First Name</label>
@@ -81,7 +81,6 @@ const SignupForm = (props) => {
       <input
         type="submit"
         value="Create Account"
-        onClick={onFormSubmit}
       />
     </form>
   );
